@@ -57,12 +57,12 @@ main {
     min-height: 90vh;
 }
 
-main .container{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+main .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ask-question-form {
@@ -107,4 +107,89 @@ main .container{
 
 .ask-question-form button:hover {
     background: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        width: 100%;
+        text-align: left;
+    }
+
+    header li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    main .container {
+        padding: 0 20px;
+    }
+
+    .ask-question-form {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .ask-question-form h2 {
+        font-size: 1.5em;
+    }
+
+    .ask-question-form input,
+    .ask-question-form textarea {
+        padding: 8px;
+    }
+
+    .ask-question-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    header nav {
+        padding: 10px 0;
+    }
+
+    header li {
+        padding: 5px 0;
+    }
+
+    main .container {
+        padding: 0 10px;
+    }
+
+    .ask-question-form {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .ask-question-form h2 {
+        font-size: 1.2em;
+    }
+
+    .ask-question-form input,
+    .ask-question-form textarea {
+        padding: 6px;
+    }
+
+    .ask-question-form button {
+        padding: 6px;
+        font-size: 12px;
+    }
 }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <script src="https://kit.fontawesome.com/891bf1ec7e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/about.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">
+                    <h1>TechThreads</h1>
+                </a>
+                <ul>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ask.html">Ask Question</a></li>
+                    <li><a href="./login.html">Sign In</a></li>
+                    <li><a href="./signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="main-image"></div>
+            <div class="about-section">
+                <h2><i class="fa-solid fa-tag"></i> About TechThreads</h2>
+                <p>
+                    Welcome to TechThreads, your go-to platform for all tech-related questions and answers.
+                    Whether you're a seasoned developer or just starting out, our community is here to help
+                    you navigate the ever-evolving world of technology.
+                </p>
+
+                <h2><i class="fa-solid fa-crosshairs"></i> Our Mission</h2>
+                <p>
+                    At TechThreads, our mission is to create a collaborative space where tech enthusiasts
+                    can share knowledge, solve problems, and inspire each other. We believe in the power of
+                    community and strive to make learning accessible and enjoyable for everyone.
+                </p>
+
+                <h2><i class="fa-solid fa-hand-holding-hand"></i> What We Offer</h2>
+                <div class="features"><ul>
+                    <li>A vibrant community of tech experts and learners.</li>
+                    <li>Detailed answers to a wide range of tech questions.</li>
+                    <li>Opportunities to share your expertise and gain recognition.</li>
+                    <li>Resources and tools to help you stay up-to-date with the latest in tech.</li>
+                </ul></div>
+
+                <h2 style="margin-top: 20px;"><i class="fa-solid fa-location-dot"></i> Our Location</h2>
+                <div class="map-container">
+                    <div id="map"></div>
+                    <a href="https://maps.app.goo.gl/xUvYQhZ1sPPJywX36" target="_blank"><img
+                            src="./assets/images/g-map.png" alt="" id="g-map"></a>
+                </div>
+
+                <h2 style="margin-top: 20px;"><i class="fa-solid fa-right-to-bracket"></i> Join Us</h2>
+                <p>
+                    Become a part of the TechThreads community today. Whether you have a question,
+                    an answer, or just want to explore, there's a place for you here. Sign up now and
+                    start your journey with TechThreads.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-6 mb-3 grid-item">
+                            <a href="#">
+                                <div class="social-item">
+                                    <i style="color: #fff; font-size: 25px;" class="fa-brands fa-facebook fa-beat"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6 mb-3 grid-item">
+                            <a href="#">
+                                <div class="social-item">
+                                    <i style="color: #fff; font-size: 25px;" class="fa-brands fa-twitter fa-beat"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6 mb-3 grid-item">
+                            <a href="#">
+                                <div class="social-item">
+                                    <i style="color: #fff; font-size: 25px;" class="fa-brands fa-linkedin fa-beat"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-6 mb-3 grid-item">
+                            <a href="#">
+                                <div class="social-item">
+                                    <i style="color: #fff; font-size: 25px;" class="fa-brands fa-youtube fa-beat"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechThreads. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="./assets/js/about.js"></script>
+</body>
+
+</html>

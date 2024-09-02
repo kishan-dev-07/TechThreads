@@ -14,3 +14,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([companyLatitude, companyLongitude]).addTo(map)
     .bindPopup('<b>TechThreads Headquarters</b><br>San Francisco, CA.')
     .openPopup();
+
+
+    document.querySelector('.map-yes').addEventListener('click', function() {
+        window.open('https://maps.app.goo.gl/xUvYQhZ1sPPJywX36', '_blank');
+    });

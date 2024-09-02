@@ -1,0 +1,51 @@
+<!ELEMENT QASystem (User, Question, Answer, Post, Comment, Tag, Vote, Badge, ActivityLog)>
+<!ELEMENT User (UserID, Name, Email, Password, About, JoinedOn)>
+<!ELEMENT UserID (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT About (#PCDATA)>
+<!ELEMENT JoinedOn (#PCDATA)>
+
+<!ELEMENT Question (QuestionID, QuestionTitle, QuestionBody, QuestionTags, AskedOn)>
+<!ELEMENT QuestionID (#PCDATA)>
+<!ELEMENT QuestionTitle (#PCDATA)>
+<!ELEMENT QuestionBody (#PCDATA)>
+<!ELEMENT QuestionTags (#PCDATA)>
+<!ELEMENT AskedOn (#PCDATA)>
+
+<!ELEMENT Answer (AnswerID, AnswerBody, AnsweredOn)>
+<!ELEMENT AnswerID (#PCDATA)>
+<!ELEMENT AnswerBody (#PCDATA)>
+<!ELEMENT AnsweredOn (#PCDATA)>
+
+<!ELEMENT Post (PostID, PostTitle, PostFile, PostedOn)>
+<!ELEMENT PostID (#PCDATA)>
+<!ELEMENT PostTitle (#PCDATA)>
+<!ELEMENT PostFile (#PCDATA)>
+<!ELEMENT PostedOn (#PCDATA)>
+
+<!ELEMENT Comment (CommentID, CommentBody, CommentedOn)>
+<!ELEMENT CommentID (#PCDATA)>
+<!ELEMENT CommentBody (#PCDATA)>
+<!ELEMENT CommentedOn (#PCDATA)>
+
+<!ELEMENT Tag (TagID, TagName, TagDescription)>
+<!ELEMENT TagID (#PCDATA)>
+<!ELEMENT TagName (#PCDATA)>
+<!ELEMENT TagDescription (#PCDATA)>
+
+<!ELEMENT Vote (VoteID, VoteType, VotedOn)>
+<!ELEMENT VoteID (#PCDATA)>
+<!ELEMENT VoteType (#PCDATA)>
+<!ELEMENT VotedOn (#PCDATA)>
+
+<!ELEMENT Badge (BadgeID, BadgeName, Description)>
+<!ELEMENT BadgeID (#PCDATA)>
+<!ELEMENT BadgeName (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+
+<!ELEMENT ActivityLog (LogID, ActivityType, LoggedOn)>
+<!ELEMENT LogID (#PCDATA)>
+<!ELEMENT ActivityType (#PCDATA)>
+<!ELEMENT LoggedOn (#PCDATA)>

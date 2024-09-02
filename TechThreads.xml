@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="TechThreads.xsl"?>
+<!DOCTYPE QASystem SYSTEM "TechThreads.dtd">
+<QASystem >
+    <User>
+        <UserID>U001</UserID>
+        <Name>John Doe</Name>
+        <Email>john.doe@example.com</Email>
+        <Password>password123</Password>
+        <About>A software developer.</About>
+        <JoinedOn>2023-01-15</JoinedOn>
+    </User>
+    <Question>
+        <QuestionID>Q001</QuestionID>
+        <QuestionTitle>How to validate XML?</QuestionTitle>
+        <QuestionBody>What are the best practices to validate an XML file?</QuestionBody>
+        <QuestionTags>XML, Validation</QuestionTags>
+        <AskedOn>2023-02-10</AskedOn>
+    </Question>
+    <Answer>
+        <AnswerID>A001</AnswerID>
+        <AnswerBody>Use DTD or XSD to validate XML files.</AnswerBody>
+        <AnsweredOn>2023-02-11</AnsweredOn>
+    </Answer>
+    <Post>
+        <PostID>P001</PostID>
+        <PostTitle>XML Validation Post</PostTitle>
+        <PostFile>https://example.com/postfile.xml</PostFile>
+        <PostedOn>2023-02-12</PostedOn>
+    </Post>
+    <Comment>
+        <CommentID>C001</CommentID>
+        <CommentBody>This is a comment.</CommentBody>
+        <CommentedOn>2023-02-13</CommentedOn>
+    </Comment>
+    <Tag>
+        <TagID>T001</TagID>
+        <TagName>XML</TagName>
+        <TagDescription>Questions related to XML.</TagDescription>
+    </Tag>
+    <Vote>
+        <VoteID>V001</VoteID>
+        <VoteType>upvote</VoteType>
+        <VotedOn>2023-02-14</VotedOn>
+    </Vote>
+    <Badge>
+        <BadgeID>B001</BadgeID>
+        <BadgeName>XML Expert</BadgeName>
+        <Description>Awarded for expertise in XML.</Description>
+    </Badge>
+    <ActivityLog>
+        <LogID>L001</LogID>
+        <ActivityType>login</ActivityType>
+        <LoggedOn>2023-02-15</LoggedOn>
+    </ActivityLog>
+</QASystem>

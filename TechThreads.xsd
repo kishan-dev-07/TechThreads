@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/Techthreads"
+           xmlns="http://www.example.com/Techthreads"
+           elementFormDefault="qualified">
+    
+    <xs:element name="QASystem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="User" type="UserType" maxOccurs="unbounded"/>
+                <xs:element name="Question" type="QuestionType" maxOccurs="unbounded"/>
+                <xs:element name="Answer" type="AnswerType" maxOccurs="unbounded"/>
+                <xs:element name="Vote" type="VoteType" maxOccurs="unbounded"/>
+                <xs:element name="ActivityLog" type="ActivityLogType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Restriction 1: Restrict UserID length to exactly 5 characters -->
+    <xs:simpleType name="RestrictedUserID">
+        <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Restriction 2: Restrict VoteType to "upvote" or "downvote" -->
+    <xs:simpleType name="RestrictedVoteType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="upvote"/>
+            <xs:enumeration value="downvote"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="UserType">
+        <xs:sequence>
+            <xs:element name="UserID" type="RestrictedUserID"/>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Email" type="xs:string"/>
+            <xs:element name="Password" type="xs:string"/>
+            <xs:element name="About" type="xs:string"/>
+            <xs:element name="JoinedOn" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="QuestionType">
+        <xs:sequence>
+            <xs:element name="QuestionID" type="xs:string"/>
+            <xs:element name="QuestionTitle" type="xs:string"/>
+            <xs:element name="QuestionBody" type="xs:string"/>
+            <xs:element name="QuestionTags" type="xs:string"/>
+            <xs:element name="AskedOn" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AnswerType">
+        <xs:sequence>
+            <xs:element name="AnswerID" type="xs:string"/>
+            <xs:element name="AnswerBody" type="xs:string"/>
+            <xs:element name="AnsweredOn" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="VoteType">
+        <xs:sequence>
+            <xs:element name="VoteID" type="xs:string"/>
+            <xs:element name="VoteType" type="RestrictedVoteType"/>
+            <xs:element name="VotedOn" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ActivityLogType">
+        <xs:sequence>
+            <xs:element name="LogID" type="xs:string"/>
+            <xs:element name="ActivityType" type="xs:string"/>
+            <xs:element name="LoggedOn" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

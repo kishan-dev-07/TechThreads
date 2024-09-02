@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechThreads User Details</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .details {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="/">
+                    <h2>TechThreads</h2>
+                </a>
+                <ul>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ask.html">Ask Question</a></li>
+                    <li><a href="./login.html">Sign In</a></li>
+                    <li><a href="./signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h1 style="margin-top: 20px;">TechThreads User Details</h1>
+
+    <div class="section" id="user-details">
+        <h2>User Information</h2>
+        <div class="details"></div>
+    </div>
+
+    <div class="section" id="question-details">
+        <h2>Question</h2>
+        <div class="details"></div>
+    </div>
+
+    <div class="section" id="answer-details">
+        <h2>Answer</h2>
+        <div class="details"></div>
+    </div>
+
+    <div class="section" id="vote-details">
+        <h2>Vote</h2>
+        <div class="details"></div>
+    </div>
+
+    <div class="section" id="activity-log">
+        <h2>Activity Log</h2>
+        <div class="details"></div>
+    </div>
+
+    <script>
+        // Function to fetch and parse XML file
+        function fetchAndDisplayXML() {
+            fetch('TechThreads.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "text/xml");
+
+                    // User Details
+                    const user = xmlDoc.getElementsByTagName("User")[0];
+                    const userDetails = `
+                        <p><strong>UserID:</strong> ${user.getElementsByTagName("UserID")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Name:</strong> ${user.getElementsByTagName("Name")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Email:</strong> ${user.getElementsByTagName("Email")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>About:</strong> ${user.getElementsByTagName("About")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Joined On:</strong> ${user.getElementsByTagName("JoinedOn")[0].childNodes[0].nodeValue}</p>
+                    `;
+                    document.getElementById("user-details").querySelector(".details").innerHTML = userDetails;
+
+                    // Question Details
+                    const question = xmlDoc.getElementsByTagName("Question")[0];
+                    const questionDetails = `
+                        <p><strong>Question Title:</strong> ${question.getElementsByTagName("QuestionTitle")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Question Body:</strong> ${question.getElementsByTagName("QuestionBody")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Tags:</strong> ${question.getElementsByTagName("QuestionTags")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Asked On:</strong> ${question.getElementsByTagName("AskedOn")[0].childNodes[0].nodeValue}</p>
+                    `;
+                    document.getElementById("question-details").querySelector(".details").innerHTML = questionDetails;
+
+                    // Answer Details
+                    const answer = xmlDoc.getElementsByTagName("Answer")[0];
+                    const answerDetails = `
+                        <p><strong>Answer Body:</strong> ${answer.getElementsByTagName("AnswerBody")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Answered On:</strong> ${answer.getElementsByTagName("AnsweredOn")[0].childNodes[0].nodeValue}</p>
+                    `;
+                    document.getElementById("answer-details").querySelector(".details").innerHTML = answerDetails;
+
+                    // Vote Details
+                    const vote = xmlDoc.getElementsByTagName("Vote")[0];
+                    const voteDetails = `
+                        <p><strong>Vote Type:</strong> ${vote.getElementsByTagName("VoteType")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Voted On:</strong> ${vote.getElementsByTagName("VotedOn")[0].childNodes[0].nodeValue}</p>
+                    `;
+                    document.getElementById("vote-details").querySelector(".details").innerHTML = voteDetails;
+
+                    // Activity Log
+                    const activityLog = xmlDoc.getElementsByTagName("ActivityLog")[0];
+                    const activityLogDetails = `
+                        <p><strong>Activity Type:</strong> ${activityLog.getElementsByTagName("ActivityType")[0].childNodes[0].nodeValue}</p>
+                        <p><strong>Logged On:</strong> ${activityLog.getElementsByTagName("LoggedOn")[0].childNodes[0].nodeValue}</p>
+                    `;
+                    document.getElementById("activity-log").querySelector(".details").innerHTML = activityLogDetails;
+                })
+                .catch(error => console.error('Error fetching the XML file:', error));
+        }
+
+        // Call the function to fetch and display the XML content
+        fetchAndDisplayXML();
+    </script>
+</body>
+</html>
